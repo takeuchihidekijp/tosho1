@@ -25,6 +25,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass'
 
+#20160706 takeuchi add
+gem "paranoia", "~> 2.0"
+
+#20160706 takeuchi add
+gem 'bootstrap-wysihtml5-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

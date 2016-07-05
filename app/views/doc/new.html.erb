@@ -1,0 +1,27 @@
+<h1>Doc#new(ドキュメント作成画面)</h1>
+
+<textarea id="some-textarea" class='wysihtml5' placeholder="Enter text ..."></textarea>
+
+<p>
+<input type="button" value="Save" onclick="history.back()">
+</p>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+  })
+</script>
+
+<p>Find me in app/views/doc/new.html.erb</p>
+
+<textarea id="search-textarea" class='field' placeholder="引用文章検索 ..."></textarea>
+<p>
+<input type="button" value="内部文書検索" onclick="history.back()">
+<input type="button" value="インターネット検索" onclick="history.back()">
+</p>
+
+<textarea id="iine-textarea" class='wysihtml5' placeholder="引用文章結果が出てくる ..."></textarea>

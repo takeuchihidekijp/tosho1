@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'iine',  to: 'iine#new'
+
+  get 'doc',  to: 'doc#new'
+
   get 'users/new'
 
   root 'top_pages#home'

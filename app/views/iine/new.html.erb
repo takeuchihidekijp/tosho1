@@ -1,0 +1,23 @@
+<h1>Iine#new(ドキュメント検索といいね画面)</h1>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    $('.wysihtml5').each(function(i, elem) {
+      $(elem).wysihtml5();
+    });
+
+  })
+</script>
+
+<textarea id="search-textarea" class='field' placeholder="引用文章検索 ..."></textarea>
+<p>
+<input type="button" value="内部文書検索" onclick="history.back()">
+<input type="button" value="インターネット検索" onclick="history.back()">
+</p>
+
+<textarea id="iine-textarea" class='wysihtml5' placeholder="引用文章結果が出てくる ..."></textarea>
+
+<p>
+<input type="button" value="いいね" onclick="history.back()">
+</p>
