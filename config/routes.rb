@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'manages', to: 'manages#home'
+
+  get 'take_pages', to: 'take_pages#home'
+
   get 'iine',  to: 'iine#new'
 
   get 'doc',  to: 'doc#new'
