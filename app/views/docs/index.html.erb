@@ -1,0 +1,12 @@
+<h1>ドキュメント検索</h1>
+
+<!-- 検索フォーム -->
+<%= form_tag '/docs', method: 'get' do %>
+  <%= text_field_tag 'q' %>
+  <%= submit_tag '検索' %>
+<% end %>
+
+<!-- 検索結果一覧テーブル -->
+<%# @docs.each do |doc| %>
+<%# end %>
+
