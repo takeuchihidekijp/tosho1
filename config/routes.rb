@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'doc_groups/new'
+
   get 'manages', to: 'manages#home'
 
   get 'take_pages', to: 'take_pages#home'
@@ -13,6 +15,8 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'
 
   resources :docs
+  resources :doc_groups
+  
 #  resources :users, only: [:create]
    resources :users
   resources :sessions, only: [:new, :create, :destroy]
