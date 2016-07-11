@@ -1,9 +1,9 @@
 <h1>DocGroups#new</h1>
 <p>Find me in app/views/doc_groups/new.html.erb</p>
 
-<%= form_for(@doc) do |f| %>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+<%= form_for(@cat) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
     <%= f.text_area :body, {id: 'some-textarea', class: 'wysihtml5', placeholder: "Enter text ..."} %>
-    <%= f.submit "Save Document" %>
+    <%= f.submit "Save Category" %>
 <% end %>

@@ -1,4 +1,12 @@
-class DocGroupsController < ApplicationController
+class  DocCategoriesController < ApplicationController
+  
+  # /docs
+  def index
+  end
+  
+  def show
+  end
+  
   def new
     @cat = DocCategory.new
   end
@@ -11,6 +19,15 @@ class DocGroupsController < ApplicationController
       flash.now[:alert] = 'カテゴリ作成失敗しました'
       render 'new'
     end
+  end
+  
+  def edit
+  end
+  
+  def update
+  end
+  
+  def destroy
   end
   
     private
