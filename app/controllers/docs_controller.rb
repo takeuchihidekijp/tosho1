@@ -4,7 +4,7 @@ class DocsController < ApplicationController
 
   # /docs
   def index
-    #@docs = Doc.where()
+    @docs = Doc.all
   end
 
   def show
@@ -17,7 +17,7 @@ class DocsController < ApplicationController
 
   def create
     @doc = Doc.new(document_params)
-    if !@doc.save
+    if @doc.save
       redirect_to current_user, notice: '文書作成しました！'
     else
       flash.now[:alert] = '文書作成失敗しました'
