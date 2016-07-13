@@ -1,16 +1,16 @@
-class  DocCategoriesController < ApplicationController
-  
+class DocCategoriesController < ApplicationController
+
   def index
     @cat = DocCategory.all
   end
-  
+
   def show
   end
-  
+
   def new
     @cat = DocCategory.new
   end
-  
+
   def create
     @cat = DocCategory.new(category_params)
     if @cat.save
@@ -20,20 +20,20 @@ class  DocCategoriesController < ApplicationController
       render 'new'
     end
   end
-  
+
   def edit
   end
-  
+
   def update
   end
-  
+
   def destroy
   end
-  
-    private
+
+  private
 
   def category_params
     params.require(:doc_category).permit(:name)
   end
-  
+
 end

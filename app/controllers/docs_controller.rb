@@ -6,12 +6,11 @@ class DocsController < ApplicationController
   def index
     @docs = Doc.all
   end
-  
+
   def show
-    @user = User.find(params[:id])
-    @doc = @user.docs.order(created_at: :desc)
+    @doc = Doc.find(params[:id])
   end
-  
+
   def new
     @doc = Doc.new
   end
@@ -28,10 +27,10 @@ class DocsController < ApplicationController
 
   def edit
   end
-  
+
   def update
   end
-  
+
   def destroy
   end
 

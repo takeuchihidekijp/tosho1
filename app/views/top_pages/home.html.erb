@@ -1,4 +1,72 @@
-<div class="center jumbotron">
-    <h1>Welcome to Toshokan</h1>
-    <a class="btn btn-lg btn-primary" href="/signup">Sign up now!</a>
-</div>
+<% if logged_in? %>
+<h1>ドキュメント管理</h1>
+    <%= form_tag('/', {class: 'form-horizontal', method:'get'}) do -%>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="Input">検索</label>
+            <div class="col-sm-10">
+                <%= text_field_tag 'q', params[:q], {class: 'form-control', id: 'InputQ', placeholder: '検索'} %>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="InputSelect">カテゴリ選択</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="InputSelect">
+                    <option>カテゴリ１</option>
+                    <option>カテゴリ２</option>
+                    <option>カテゴリ３</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="InputSelect">作成者選択</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="InputSelect">
+                    <option>作成者１</option>
+                    <option>作成者２</option>
+                    <option>作成者３</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <%= submit_tag '検索', {class: 'btn btn-default'} %>
+                <%= link_to '新規作成', new_doc_path, {class: 'btn btn-info'} %>
+            </div>
+        </div>
+    <% end %>
+
+    <% if @docs.present? %>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Title</th>
+          <th>Creater</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @docs.each.with_index(1) do |doc, i| %>
+        <tr>
+          <th scope="row"><%= i %></th>
+          <td><%= link_to doc.title, doc_path(doc) %></td>
+          <td><%= doc.doc_catgory %></td>
+          <td><%= link_to "編集", edit_doc_path(doc), {class: 'btn btn-primary btn-xs' } %></td>
+          <td><%= link_to "削除", doc, {class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: '削除してもよろしいですか？' } } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <% end %>
+
+<% else %>
+
+    <div class="center jumbotron">
+        <h1>Welcome to Toshokan</h1>
+        <a class="btn btn-lg btn-primary" href="/signup">Sign up now!</a>
+    </div>
+
+<% end %>

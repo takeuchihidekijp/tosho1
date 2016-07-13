@@ -1,13 +1,7 @@
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
-  
-  <div class="col-md-8">
-    <% if @user.docs.any? %>
-      <h3>Microposts (<%= @user.docs.count %>)</h3>
-      <ol class="docs">
-        <%= render @docs %>
-      </ol>
-    <% end %>
-  </div>
+<h1>ドキュメント表示</h1>
+
+<h2><%= @doc.title %></h2>
+<pre><%= @doc.body %></pre>
+
+
+<%= link_to '戻る', root_path, {class: 'btn btn-default'} %>
