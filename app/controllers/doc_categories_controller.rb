@@ -1,8 +1,8 @@
-class DocGroupsController < ApplicationController
+class DocCategoriesController < ApplicationController
   def new
     @cat = DocCategory.new
   end
-  
+
   def create
     @cat = DocCategory.new(category_params)
     if !@cat.save
@@ -12,11 +12,11 @@ class DocGroupsController < ApplicationController
       render 'new'
     end
   end
-  
+
     private
 
   def category_params
     params.require(:cat).permit(:name)
   end
-  
+
 end

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'doc_groups/new'
-
   get 'manages', to: 'manages#home'
 
   get 'take_pages', to: 'take_pages#home'
@@ -16,9 +14,8 @@ Rails.application.routes.draw do
 
   resources :docs
   resources :users
-  resources :doc_groups
-  
-#  resources :users, only: [:create]
-   resources :users
+  resources :doc_categories
+
+  resources :users
   resources :sessions, only: [:new, :create, :destroy]
 end

@@ -6,10 +6,11 @@ class DocsController < ApplicationController
   def index
     #@docs = Doc.where()
   end
-  
+
   def show
+    @doc = Doc.find(params[:id])
   end
-  
+
   def new
     @doc = Doc.new
   end
@@ -26,10 +27,10 @@ class DocsController < ApplicationController
 
   def edit
   end
-  
+
   def update
   end
-  
+
   def destroy
   end
 
