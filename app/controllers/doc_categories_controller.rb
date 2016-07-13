@@ -1,7 +1,7 @@
 class  DocCategoriesController < ApplicationController
   
-  # /docs
   def index
+    @cat = DocCategory.all
   end
   
   def show
@@ -13,7 +13,7 @@ class  DocCategoriesController < ApplicationController
   
   def create
     @cat = DocCategory.new(category_params)
-    if !@cat.save
+    if @cat.save
       redirect_to current_user, notice: 'カテゴリ作成しました！'
     else
       flash.now[:alert] = 'カテゴリ作成失敗しました'
@@ -33,7 +33,7 @@ class  DocCategoriesController < ApplicationController
     private
 
   def category_params
-    params.require(:cat).permit(:name)
+    params.require(:doc_category).permit(:name)
   end
   
 end

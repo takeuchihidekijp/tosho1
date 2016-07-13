@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :docs
   resources :users
-  resources :doc_groups
+  resources :doc_categories
   
 #  resources :users, only: [:create]
    resources :users

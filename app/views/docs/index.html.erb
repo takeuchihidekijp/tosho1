@@ -7,6 +7,9 @@
 <% end %>
 
 <!-- 検索結果一覧テーブル -->
-<%# @docs.each do |doc| %>
-<%# end %>
+<%= @docs.each do |doc| %>
+    <span class="label label-info"><%= doc.title %></span>
+    <%= doc.body %>
+    <br>
+<% end %>
 

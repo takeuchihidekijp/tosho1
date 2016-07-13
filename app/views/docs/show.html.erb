@@ -1,0 +1,13 @@
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
+  
+  <div class="col-md-8">
+    <% if @user.docs.any? %>
+      <h3>Microposts (<%= @user.docs.count %>)</h3>
+      <ol class="docs">
+        <%= render @docs %>
+      </ol>
+    <% end %>
+  </div>
