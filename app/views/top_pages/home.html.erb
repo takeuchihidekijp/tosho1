@@ -1,4 +1,12 @@
-<div class="center jumbotron">
-    <h1>Welcome to Toshokan</h1>
-    <a class="btn btn-lg btn-primary" href="/signup">Sign up now!</a>
-</div>
+<% if logged_in? %>
+　　<!-- 検索フォーム -->
+　　<%= form_tag '/docs', method: 'get' do %>
+  　　<%= text_field_tag 'q' %>
+  　　<%= submit_tag '検索' %>
+　　<% end %>
+<% else %>
+　　<div class="center jumbotron">
+    　　<h1>Welcome to Toshokan</h1>
+    　　<a class="btn btn-lg btn-primary" href="/signup">Sign up now!</a>
+　　</div>
+<% end %>
