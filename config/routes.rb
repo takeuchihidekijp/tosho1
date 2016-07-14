@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'doc_groups/new'
-
   get 'manages', to: 'manages#home'
 
   get 'take_pages', to: 'take_pages#home'

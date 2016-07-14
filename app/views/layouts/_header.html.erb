@@ -13,10 +13,10 @@
             </a>
             <ul class="dropdown-menu">
               <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "iine!",   '#' %></li>
-              <li><%= link_to "view",   '#' %></li>
-              <li><%= link_to "create",   '#' %></li>
-              <li><%= link_to "manage",   '#' %></li>
+              <li><%= link_to "iine!",   iine_path %></li>
+              <li><%= link_to "view",   docs_path %></li>
+              <li><%= link_to "create",   new_doc_path %></li>
+              <li><%= link_to "manage",   manages_path %></li>
               <li class="divider"></li>
               <li>
                 <%= link_to "Log out", logout_path, method: "delete" %>

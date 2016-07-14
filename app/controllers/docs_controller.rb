@@ -4,7 +4,12 @@ class DocsController < ApplicationController
 
   # /docs
   def index
-    @docs = Doc.all
+    q = params[:q]
+    if q.present?
+      @docs = Doc.where("body like '%"+q+"%'")
+    else
+      @docs = Doc.order('created_at')
+    end
   end
   
   def show
