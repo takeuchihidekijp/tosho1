@@ -15,3 +15,5 @@
 //= require bootstrap-sprockets
 //= require_tree .
 //= require bootstrap-wysihtml5
+//= require pagedown_bootstrap
+//= require pagedown_init

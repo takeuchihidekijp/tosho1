@@ -31,6 +31,11 @@ gem "paranoia", "~> 2.0"
 #20160706 takeuchi add
 gem 'bootstrap-wysihtml5-rails'
 
+#20160719 takeuchi add for markdown
+gem 'font-awesome-rails'
+gem 'simple_form'
+gem 'pagedown-bootstrap-rails'
+
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
