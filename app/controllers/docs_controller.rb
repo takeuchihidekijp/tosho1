@@ -23,7 +23,7 @@ class DocsController < ApplicationController
   def create
     @doc = Doc.new(document_params)
     if @doc.save
-      redirect_to current_user, notice: '文書作成しました！'
+      redirect_to root_path, notice: '文書作成しました！'
     else
       flash.now[:alert] = '文書作成失敗しました'
       render 'new'

@@ -1,8 +1,12 @@
 <h1>Doc#new(ドキュメント作成画面)</h1>
 
-<%= simple_form_for(@doc) do |f| %>
+<%= form_for @doc do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
-    <%= f.text_area :body, as: :pagedown, input_html: { preview: true, rows: 20 } %>
+    <%= f.text_area :body, {id: 'doc-new'} %>
     <%= f.submit "Save Document" %>
 <% end %>
+
+<script type="text/javascript">
+    var simplemde = new SimpleMDE({ element: document.getElementById("doc-new") });
+</script>
