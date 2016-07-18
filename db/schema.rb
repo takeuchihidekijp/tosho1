@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 20160706112114) do
   create_table "docs", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
+    t.integer  "user_id"
     t.integer  "doc_ref_id"
     t.integer  "doc_category_id"
     t.datetime "created_at",      null: false
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(version: 20160706112114) do
 
   add_index "docs", ["doc_category_id"], name: "index_docs_on_doc_category_id"
   add_index "docs", ["doc_ref_id"], name: "index_docs_on_doc_ref_id"
+  add_index "docs", ["user_id"], name: "index_docs_on_user_id"
 
   create_table "orgs", force: :cascade do |t|
     t.string   "name"

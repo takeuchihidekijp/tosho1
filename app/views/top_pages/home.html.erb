@@ -34,7 +34,9 @@
         <tr>
           <th>#</th>
           <th>Title</th>
-          <th>Creater</th>
+          <th>カテゴリ</th>
+          <th>ユーザー名</th>
+          <th></th>
           <th></th>
           <th></th>
         </tr>
@@ -44,9 +46,11 @@
         <tr>
           <th scope="row"><%= i %></th>
           <td><%= link_to doc.title, doc_path(doc) %></td>
-          <td><%= doc.doc_catgory %></td>
+          <td><%= doc.doc_category.try(:name) %></td>
+          <td><%= doc.user.try(:name) %></td>
           <td><%= link_to "編集", edit_doc_path(doc), {class: 'btn btn-primary btn-xs' } %></td>
           <td><%= link_to "削除", doc, {class: 'btn btn-danger btn-xs', method: :delete, data: { confirm: '削除してもよろしいですか？' } } %></td>
+          <td><%= link_to "いいね", "#", {class: 'btn btn-info btn-xs', method: :post } %></td>
         </tr>
         <% end %>
       </tbody>

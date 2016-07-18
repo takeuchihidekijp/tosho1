@@ -18,10 +18,12 @@ class DocsController < ApplicationController
 
   def new
     @doc = Doc.new
+    @doc.build_doc_category
   end
 
   def create
     @doc = Doc.new(document_params)
+    @doc.user = current_user
     if @doc.save
       redirect_to root_path, notice: '文書作成しました！'
     else
@@ -46,7 +48,8 @@ class DocsController < ApplicationController
   end
 
   def document_params
-    params.require(:doc).permit(:title, :body)
+    params.require(:doc).permit(:title, :body, doc_category_attributes: [:id, :name])
   end
+
 
 end
