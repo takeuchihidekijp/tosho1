@@ -1,12 +1,33 @@
 <h1>ドキュメント表示</h1>
 
 <h2><%= @doc.title %></h2>
-<textarea id="doc-read" readonly="readonly"><%= @doc.body %></textarea>
+<div id="doc"><%= @doc.body %></div>
 
 <script type="text/javascript">
-    $(function(){
+$(function(){
+    /*
     var simplemde = new SimpleMDE({ element: document.getElementById("doc-read") });
     $('.editor-preview').addClass('editor-preview-active');
+    */
+    var doc_id = <%= @doc.id %>
+    $('#doc').on('mouseup', function(){
+        var sel = document.getSelection();
+        if ( $(sel.anchorNode.parentNode).get(0).id == 'doc' && $(sel.focusNode.parentNode).get(0).id == 'doc' && sel.isCollapsed == false) {
+            if (confirm("いいねしますか？")) {
+                //console.dir(sel.getRangeAt(0));
+                r = sel.getRangeAt(0);
+                data = {
+                    from: r.startOffst,
+                    to: r.endOffset,
+                    doc_id: doc_id
+                }
+                $.post('/iine', data)
+                    .done(function(evt){
+                        alert("いいね登録しました。");
+                    });
+            }
+        }
+    });
 });
 </script>
 
