@@ -3,6 +3,13 @@
 <%= form_for @doc do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %>
+
+    <%= f.fields_for :doc_category do |category| %>
+      <%= category.label :name, 'カテゴリ名' %>
+      <%#= category.collection_select :name, category.all, :id, :name %>
+      <%= category.text_field :name %>
+    <% end %>
+
     <%= f.text_area :body, {id: 'doc-new'} %>
     <%= f.submit "Save Document" %>
 <% end %>
