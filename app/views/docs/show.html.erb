@@ -1,7 +1,14 @@
 <h1>ドキュメント表示</h1>
 
 <h2><%= @doc.title %></h2>
-<pre><%= @doc.body %></pre>
+<textarea id="doc-read" readonly="readonly"><%= @doc.body %></textarea>
+
+<script type="text/javascript">
+    $(function(){
+    var simplemde = new SimpleMDE({ element: document.getElementById("doc-read") });
+    $('.editor-preview').addClass('editor-preview-active');
+});
+</script>
 
 
 <%= link_to '戻る', root_path, {class: 'btn btn-default'} %>
