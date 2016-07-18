@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   resources :users
   resources :doc_categories
   resources :users
+  resources :iine, only: [:new, :create, :destroy]
   resources :sessions, only: [:new, :create, :destroy]
 end
