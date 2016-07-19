@@ -39,6 +39,8 @@ class DocsController < ApplicationController
   end
 
   def destroy
+    @doc.destroy
+    redirect_to root_path, notice: 'ドキュメント削除しました！'
   end
 
   private
