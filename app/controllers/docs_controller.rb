@@ -33,9 +33,16 @@ class DocsController < ApplicationController
   end
 
   def edit
+    @doc = Doc.find(params[:id])
   end
 
   def update
+    if @doc.update(document_params)
+      redirect_to root_path, notice: '文書更新しました！'
+    else
+      flash.now[:alert] = '文書更新失敗しました'
+      render 'edit'
+    end
   end
 
   def destroy
